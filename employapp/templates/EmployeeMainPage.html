@@ -1,0 +1,111 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .card {
+            background-color: #fff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+        }
+        
+        .profile-card {
+            flex: 1;
+        }
+        
+        .shift-card {
+            flex: 1;
+            background-color: #f0f0f0;
+        }
+        
+        h2 {
+            margin-bottom: 30px;
+            color: #007bff;
+            text-align: center;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        th {
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        td {
+            padding: 5px 0;
+        }
+    </style>
+    <div class="container">
+        <div style="
+        box-shadow: 5px 8px 0px 0px;
+    " class="card profile-card">
+            <h2>Employee Profile</h2>
+            <table>
+                <tr>
+                    <th>Name:</th>
+                    <td>{{user.employee_name}}</td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td>{{user.email}}</td>
+                </tr>
+                <tr>
+                    <th>Job Department:</th>
+                    <td>{{user.job_department}}</td>
+                </tr>
+                <tr>
+                    <th>Phone Number:</th>
+                    <td>{{user.phone_number}}</td>
+                </tr>
+                <tr>
+                    <th>Age:</th>
+                    <td>{{user.age}}</td>
+                </tr>
+                <tr>
+                    <th>Address:</th>
+                    <td>{{user.address}}</td>
+                </tr>
+                <tr>
+                    <th>Date of Birth:</th>
+                    <td>{{user.date_of_birth}}</td>
+                </tr>
+            </table>
+
+            <a href="EmployeeSaveChanges"><button>Edit</button></a>
+        </div>
+        
+        <div style="
+        box-shadow: 5px 8px 0px 0px;
+    " class="card shift-card">
+            <h2>Job Shift</h2>
+            <table>
+                <tr>
+                    <th>Shift Start Time:</th>
+                    <td>{{user.start_time}}</td>
+                </tr>
+                <tr>
+                    <th>Shift End Time:</th>
+                    <td>{{user.end_time}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock content %}
